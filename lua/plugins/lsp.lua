@@ -23,10 +23,14 @@ return {
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		local lsp = vim.lsp
+
+		-- Динамическое вычисление пути до vue-language-server, установленного через Mason
+		local mason_path = vim.fn.stdpath("data")
+		local vue_language_server_path = mason_path .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+
 		local vue_plugins = {
 			name = "@vue/typescript-plugin",
-			location = "/usr/lib/node_modules/@vue/language-server", -- пофиксить!
-			--location = vue_language_server_path,
+			location = vue_language_server_path,
 			languages = { "vue" },
 			configNamespace = "typescript",
 		}
@@ -57,6 +61,9 @@ return {
 							vue_plugins,
 						},
 					},
+					typescript = {
+						updateImportsOnFileMove = { enabled = "always" },
+					}
 				},
 			},
 			filetypes = { "typescript", "javascript", "vue" },
@@ -74,3 +81,4 @@ return {
 		})
 	end,
 }
+
