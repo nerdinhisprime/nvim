@@ -1,4 +1,4 @@
-require("yazi")
+-- require("yazi")
 
 vim.g.mapleader = " "
 local map = vim.keymap.set
@@ -20,7 +20,3 @@ map("n", "<leader>t", function()
 	vim.cmd("botright split | terminal")
 	--os.execute("foot &")
 end)
-
--- yazi
-vim.api.nvim_create_user_command("Ex", require("yazi").open_yazi, {})
-vim.keymap.set("n", "<leader>e", require("yazi").open_yazi, { desc = "Yazi file manager" })
