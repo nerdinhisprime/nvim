@@ -1,5 +1,3 @@
--- require("yazi")
-
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
@@ -12,11 +10,9 @@ map(mods, "<C-q>", "<cmd>q<cr>")
 -- buffers
 map("n", "]b", "<cmd>bprev<cr>")
 map("n", "[b", "<cmd>bnext<cr>")
-map("n", "bd", "<cmd>bdelete<cr>")
-map("n", "b<tab>", ":b ")
+map("n", "<leader>q", "<cmd>bdelete<cr>")
 
 -- terminal
 map("n", "<leader>t", function()
 	vim.cmd("botright split | terminal")
-	--os.execute("foot &")
 end)
