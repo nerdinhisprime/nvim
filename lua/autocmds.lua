@@ -8,7 +8,7 @@ autocmd("BufWritePost", {
 		stdpath("config") .. "/lua/**/*.lua",
 	},
 	callback = function(args)
-		vim.cmd("source" .. args.file)
+		vim.cmd("source " .. args.file)
 	end,
 })
 
