@@ -30,3 +30,7 @@ opt.listchars = {
 	trail = ".",
 	nbsp = "+",
 }
+
+-- utils --------------------------------
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
