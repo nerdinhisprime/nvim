@@ -5,11 +5,7 @@ local is_vue_plugin_installed = vim.fn.isdirectory(vue_plugin_path) == 1
 
 return {
   cmd = { "vtsls", "--stdio" },
-
-  filetypes = is_vue_plugin_installed
-      and { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" }
-      or { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-
+  filetypes = { "javascript", "javascript.jsx", "typescript", "typescript.tsx", "vue" },
   root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
 
   settings = {
