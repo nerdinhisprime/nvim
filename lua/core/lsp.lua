@@ -2,16 +2,15 @@ vim.lsp.enable({
   'lua_ls',
   'vtsls',
   'volar',
-  'html',
-  'jsonls',
   'cssls',
-  'emmet_ls',
+  'jsonls',
+  'emmet-ls',
 })
 
 local blink_capabilities = require('blink.cmp').get_lsp_capabilities()
-vim.lsp.config['*'] = {
-  capabilities = blink_capabilities,
-}
+vim.lsp.config('*', {
+  capabilities = blink_capabilities
+})
 
 vim.diagnostic.config({
   signs = {
