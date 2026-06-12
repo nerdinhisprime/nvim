@@ -1,6 +1,4 @@
-local npm_root = vim.trim(vim.fn.system("npm root -g"))
-local vue_plugin_path = npm_root .. "/@vue/language-server/node_modules/@vue/typescript-plugin"
-
+local vue_plugin_path = "/usr/lib/node_modules/@vue/language-server"
 local is_vue_plugin_installed = vim.fn.isdirectory(vue_plugin_path) == 1
 
 return {
@@ -22,6 +20,8 @@ return {
             name = "@vue/typescript-plugin",
             location = vue_plugin_path,
             languages = { "vue" },
+            configNamespace = "typescript",
+            enableForWorkspaceTypeScriptVersions = true,
           },
         },
       } or nil,
